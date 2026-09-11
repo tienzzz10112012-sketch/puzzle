@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>3301 // GATEWAY 1</title>
+    <style>
+        body { background: #05080c; color: #00ff66; font-family: monospace; text-align: center; padding: 40px; }
+        .box { border: 1px solid #00ff66; padding: 30px; max-width: 600px; margin: 0 auto; background: #0d1117; box-shadow: 0 0 15px rgba(0,255,102,0.2); }
+        .code { background: #161b22; color: #58a6ff; padding: 15px; margin: 20px 0; border-left: 3px solid #00ff66; word-break: break-all; }
+        input, button { background: #161b22; border: 1px solid #00ff66; color: #00ff66; padding: 10px; font-family: monospace; }
+        button { cursor: pointer; background: #238636; color: #fff; font-weight: bold; }
+        .err { color: #f85149; display: none; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>[GATEWAY 1: MORSE & HEX]</h2>
+        <p>Giải mã chuỗi Morse dưới đây để lấy giá trị Hex, sau đó chuyển Hex sang chữ ASCII để lấy từ khóa:</p>
+        
+        <div class="code">
+            ... -- ... .---- ...-- ...-- ----- .----<br>
+            <span style="color:#8b949e; font-size:0.85rem;">(Gợi ý: Morse -> Chuỗi số Hex "53 31 33 30 31" -> Chữ ASCII)</span>
+        </div>
+
+        <input type="text" id="ans" placeholder="Nhập từ khóa giải mã..." autocomplete="off">
+        <button onclick="check()">UNLOCK GATE 2</button>
+        <p id="err" class="err">> MẬT MÃ KHÔNG CHÍNH XÁC!</p>
+    </div>
+
+    <script>
+        function check() {
+            // Hex 53 31 33 30 31 -> ASCII: "S1301"
+            var v = document.getElementById('ans').value.trim().toUpperCase();
+            if(v === "S1301") {
+                window.location.href = "stage2_cipher.html";
+            } else {
+                document.getElementById('err').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

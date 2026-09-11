@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>3301 // FINAL VAULT</title>
+    <style>
+        body { background: #000; color: #00ff66; font-family: monospace; text-align: center; padding: 40px; }
+        .card { border: 2px solid #00ff66; padding: 30px; max-width: 650px; margin: 0 auto; background: #080c10; box-shadow: 0 0 20px rgba(0,255,102,0.3); }
+        h1 { color: #58a6ff; font-size: 1.6rem; margin-bottom: 20px; }
+        .coord-box { background: #161b22; border: 1px dashed #58a6ff; padding: 15px; margin: 20px 0; color: #d29922; }
+        input, button { background: #161b22; border: 1px solid #00ff66; color: #fff; padding: 10px; font-family: monospace; }
+        button { cursor: pointer; background: #238636; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>[3301 // ARCHIVE UNLOCKED]</h1>
+        <p>Chúc mừng bro đã vượt qua toàn bộ rào cản thuật toán mạng!</p>
+        
+        <div class="coord-box">
+            📍 LOCATING COORDINATES (SOC TRANG):<br>
+            <b style="font-size:1.2rem; color:#00ff66;">9.6022° N, 105.9739° E</b>
+        </div>
+
+        <p><b>CÂU ĐỐ CUỐI CÙNG:</b></p>
+        <p>Tọa độ trên chỉ vào ngôi chùa cổ kính nổi tiếng nào tại TP. Sóc Trăng? (Gợi ý: Ngôi chùa có hàng ngàn con dơi sinh sống).</p>
+        
+        <input type="text" id="ans" placeholder="Nhập tên ngôi chùa..." autocomplete="off">
+        <button onclick="verify()">COMPLETE MISSION</button>
+        
+        <p id="result" style="margin-top:20px; font-weight:bold; display:none;"></p>
+    </div>
+
+    <script>
+        function verify() {
+            var a = document.getElementById('ans').value.trim().toUpperCase();
+            if(a.includes("DOI") || a.includes("CHUA DOI") || a.includes("MAHATUP")) {
+                document.getElementById('result').style.color = "#00ff66";
+                document.getElementById('result').innerHTML = "🎉 [SUCCESS]: CHÍNH XÁC - CHÙA DƠI (MAHATUP)!<br>Bro đã làm chủ hoàn toàn hệ thống giải mã ARG Sóc Trăng 3301!";
+                document.getElementById('result').style.display = "block";
+            } else {
+                document.getElementById('result').style.color = "#f85149";
+                document.getElementById('result').innerHTML = "❌ [ERR]: Chưa đúng địa danh! Gợi ý: Chùa D... đấy bro!";
+                document.getElementById('result').style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

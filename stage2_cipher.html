@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>3301 // GATEWAY 2</title>
+    <style>
+        body { background: #0c0805; color: #d29922; font-family: monospace; text-align: center; padding: 40px; }
+        .box { border: 1px solid #d29922; padding: 30px; max-width: 600px; margin: 0 auto; background: #161b22; }
+        input, button { background: #0d1117; border: 1px solid #d29922; color: #fff; padding: 10px; font-family: monospace; }
+        button { cursor: pointer; background: #9e6a03; }
+        .hint { font-size: 0.85rem; color: #8b949e; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>[GATEWAY 2: CONSOLE INJECTION]</h2>
+        <p>Cicada giấu chìa khóa trong một biến hệ thống. Hãy mở Developer Console (F12) để kích hoạt lệnh lấy key.</p>
+        
+        <!-- MAT_MA_AN: "NIGHT_OWL_3301" -->
+        <p style="color:#58a6ff; margin:20px 0;">Gõ lệnh <code>getPasscode()</code> trong tab Console F12!</p>
+
+        <input type="text" id="ans" placeholder="Nhập Passcode thu được..." autocomplete="off">
+        <button onclick="check()">ACCESS FINAL VAULT</button>
+    </div>
+
+    <script>
+        function getPasscode() {
+            console.log("%c[SYSTEM]: Passcode cho Gate 3 là -> NIGHT_OWL_3301", "color: #00ff66; font-size: 14px; font-weight: bold;");
+            return "NIGHT_OWL_3301";
+        }
+
+        function check() {
+            var v = document.getElementById('ans').value.trim().toUpperCase();
+            if(v === "NIGHT_OWL_3301") {
+                window.location.href = "final_vault.html";
+            } else {
+                alert("Passcode chưa đúng! Kiểm tra lại Console (F12).");
+            }
+        }
+    </script>
+</body>
+</html>
